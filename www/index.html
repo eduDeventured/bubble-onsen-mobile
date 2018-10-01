@@ -1,0 +1,356 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script>window.html5 || document.write('<s' + 'cript src="js/vendor/html5shiv.js">' + '<' + '/s' + 'cript>');</script>
+<![endif]-->
+<title>Bubble Application</title>
+<script src="components/loader.js"></script>
+<script type="text/javascript">
+  window.web_url_equivalent_for_phonegap = "https://onsen-adri-test.bubbleapps.io/mbtest"
+</script>
+<script type="text/javascript" src="js/assets-checker.js"></script>
+<script type="text/javascript">
+window.load_error_log = [];
+window.onerror = function(msg, error_url, line, col) {
+    window.load_error_log.push({msg, error_url, line, col});
+}
+</script>
+<script type="text/javascript">
+if (!window._bubble_page_load_data) {
+    window._bubble_page_load_data = {}
+}
+window._bubble_page_load_data['pre_early'] = Date.now();
+</script>
+<meta name="referrer" content="origin">
+<script type="text/javascript" crossorigin="anonymous" src="https://dhtiece9044ep.cloudfront.net/package/early_js/011d06d55963daa276fbc2d7cb971df7c3a2097a0fdd16d840686d64b36c0d24/xfalse"></script>
+<script type="text/javascript">
+if (!window._bubble_page_load_data) {
+    window._bubble_page_load_data = {}
+}
+window._bubble_page_load_data['post_early'] = Date.now();
+</script>
+<script type="text/javascript">WebFontConfig = {
+'google': { families: ["Lato","Roboto","Raleway","Kalam:300","Roboto:300"] },
+    active: function() {
+        window.google_web_fonts_active = true;
+        if (window.google_web_fonts_active_cb) {
+            window.google_web_fonts_active_cb();
+        }
+    },
+    fontinactive: function() {
+        console.log('fontinactive being called, Google says the fonts didnt render');
+        window.google_web_fonts_active = true;
+        if (window.google_web_fonts_active_cb) {
+            window.google_web_fonts_active_cb();
+        }
+    }
+}
+window.WebFont.load(WebFontConfig);</script>
+<script type="text/javascript">window.gm_key = "AIzaSyAOt_xhB5KcdJKwfvdg6zZG7EnDzL03wFc";</script>
+<script type="text/javascript">window.glrl_key_status = false;</script>
+<link rel="icon" type="image/png" href="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1438203816318x881656567333266200%2Ffavicon_rounded.png?w=128&h=&auto=compress&fit=max" />
+<meta name="fragment" content="!">
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:url" content="https://onsen-adri-test.bubbleapps.io/mbtest" />
+<meta property="og:type" content="website" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<script type="text/javascript">window._p ='{"no_branding":true,"import_export_csv":true}';</script>
+<link type="text/css" href="https://dhtiece9044ep.cloudfront.net/package/run_css/0eec40086e3c22d2a631c73178e1902de2441c862804bfebed5f2b33b0cdebc2/onsen-adri-test/live/mbtest/xfalse/xfalse" rel="stylesheet">
+<script type="text/javascript">
+if (!window._bubble_page_load_data) {
+    window._bubble_page_load_data = {}
+}
+window._bubble_page_load_data['pre_runjs'] = Date.now();
+</script>
+<script type="text/javascript" crossorigin="anonymous" src="https://dhtiece9044ep.cloudfront.net/package/run_js/fed098a2f46a3c5a614954b8a0b13245f04e31d78c7fbaab44e661b717b659b8/xfalse/x3"></script>
+<script type="text/javascript">
+if (!window._bubble_page_load_data) {
+    window._bubble_page_load_data = {}
+}
+window._bubble_page_load_data['post_runjs'] = Date.now();
+</script>
+<script type="text/javascript" crossorigin="anonymous" src="https://dhtiece9044ep.cloudfront.net/package/run_js_page/ab4e7ef7826352cfbc3546fb62e6bc2199ac45c21f8d65a128b16e0d684e7183/onsen-adri-test/live/mbtest/xnull/xfalse/xfalse/xfalse/en_us/xfalse/xfalse"></script>
+<script type="text/javascript">
+if (!window._bubble_page_load_data) {
+    window._bubble_page_load_data = {}
+}
+window._bubble_page_load_data['post_runjspage'] = Date.now();
+</script>
+<link rel='stylesheet' href='https://unpkg.com/onsenui/css/onsenui.css'>
+<link rel='stylesheet' href='https://unpkg.com/onsenui/css/onsen-css-components.min.css'>
+<script src="https://unpkg.com/onsenui/js/onsenui.js"></script>
+<script>
+window.fn = {};
+  window.fn.pageTrack = [];
+  window.fn.onsenSettings = {};
+  window.fn.initApp = function() {
+    // setup loader
+    var bubblePageWrapper = document.querySelector('.Page');
+    var loaderElement = document.createElement('div');
+    loaderElement.setAttribute('id','onsLoadrElmntGlobl');
+    loaderElement.style.height = '100%';
+    loaderElement.style.width = '100%';
+    loaderElement.style.position = 'absolute';
+    loaderElement.style.background = '#ffffff';
+    loaderElement.style.top = 0;
+    loaderElement.style.right = 0;
+    loaderElement.style.zIndex = 999999;
+    loaderElement.style.textAlign = 'center';
+    loaderElement.style.paddingTop = '20%';
+    loaderElement.innerHTML = '<img src="https://cdn-images-1.medium.com/max/1600/1*inYwyq37FdvRPLRphTqwBA.gif" />';
+    loaderElement.style.display = 'block';
+    bubblePageWrapper.appendChild(loaderElement);
+
+    if (window.fn.initSplitterMenu) {
+      window.fn.onsenSettings.isSplitterMenuApp = true;
+      window.fn.initSplitterMenu();
+    } else if (window.fn.initNavigator) {
+      window.fn.onsenSettings.isSplitterMenuApp = false;
+      window.fn.initNavigator();
+    } else {
+      window.fn.setLoader(false);
+    }
+    
+    window.fn.globalLogo = '';
+    // Remove bubble add banner
+    setTimeout(function() {
+      // $('div').last().parent().parent().parent().css({'zIndex': -10});
+      window.fn.fixScroll();
+    }, 2000);
+
+    createCustomAnimation();
+    
+    function createCustomAnimation() {
+      // CUSTOM ANIMATOR
+      var customAnimator = function(options) {
+        options = options || {};
+
+        this.timing = options.timing || 'ease';
+        this.duration = options.duration || 0.4;
+        this.delay = options.delay || 0;
+
+        var div = document.createElement('div');
+        div.innerHTML = '<div style="position: absolute; width: 100%; height: 100%; z-index: 2; background-color: black; opacity: 0;"></div>';
+        this.backgroundMask = div.firstChild;
+        this.blackMaskOpacity = 0.4;
+      };
+
+      customAnimator.prototype = Object.create(ons.elements.Navigator.NavigatorAnimator.prototype);
+
+      customAnimator.prototype.push = function(enterPage, leavePage, done) {
+        this.backgroundMask.remove();
+        enterPage.parentNode.insertBefore(this.backgroundMask, enterPage.nextSibling);
+
+        ons.animit.runAll(
+
+          ons.animit(this.backgroundMask)
+            .saveStyle()
+            .queue({
+              opacity: this.blackMaskOpacity,
+              transform: 'translate3d(0, 0, 0)'
+            })
+            .wait(this.delay)
+            .queue({
+              opacity: 0
+            }, {
+              duration: this.duration,
+              timing: this.timing
+            })
+            .restoreStyle()
+            .queue(done => {
+              this.backgroundMask.remove();
+              done();
+            }),
+
+          ons.animit(enterPage)
+            .saveStyle()
+            .queue({
+              css: {
+                transform: 'translate3D(-45%, 0px, 0px)',
+                opacity: 0.9
+              },
+              duration: 0
+            })
+            .wait(this.delay)
+            .queue({
+              css: {
+                transform: 'translate3D(0px, 0px, 0px)',
+                opacity: 1.0
+              },
+              duration: this.duration,
+              timing: this.timing
+            })
+            .restoreStyle(),
+
+          ons.animit(leavePage)
+            .saveStyle()
+            .queue({
+              css: {
+                transform: 'translate3D(0px, 0px, 0px)',
+                zIndex: 10000,
+                display: 'block'
+              },
+              duration: 0
+            })
+            .wait(this.delay)
+            .queue({
+              css: {
+                transform: 'translate3D(100%, 0px, 0px)'
+              },
+              duration: this.duration,
+              timing: this.timing
+            })
+            .wait(0.2)
+            .restoreStyle()
+            .queue(function(finish) {
+              done();
+              finish();
+            })
+        );
+      };
+
+      ons.elements.Navigator.registerAnimator('ios-slide-back', customAnimator);
+    }
+  };
+  window.fn.toggleMenu = function () {
+    if (window.fn.onsenSettings.isSplitterMenuApp) {
+      document.getElementById('myAppSplitterMenu').toggle();
+    }
+  };
+  window.fn.openMenu = function () {
+    if (window.fn.onsenSettings.isSplitterMenuApp) {
+      document.getElementById('myAppSplitterMenu').open();
+    }
+  };
+  window.fn.closeMenu = function () {
+    if (window.fn.onsenSettings.isSplitterMenuApp) {
+      document.getElementById('myAppSplitterMenu').close();
+    }
+  };
+
+  window.fn.loadView = function (index) {
+    document.getElementById('appTabbar').setActiveTab(index);
+    document.getElementById('sidemenu').close();
+  };
+
+  window.fn.loadLink = function (url) {
+    window.open(url, '_blank');
+  };
+  window.fn.fixScroll = function(){
+    var deviceheight = document.documentElement.clientHeight || window.innerHeight;
+    document.querySelector('.main-page.Page .bubble-r-box').style.height = deviceheight  + "px";
+    document.querySelector('.main-page').style.height = deviceheight + "px";
+    document.querySelector('.main-page').children[0].style.height = deviceheight + "px";
+  };
+
+  window.fn.pushPage = function (id, data, callback) {
+  	var hardcodedNavigatorId = 'myNavigator';
+	  var navElement = document.getElementById(hardcodedNavigatorId);
+	  var page = document.getElementById(id);
+    if (navElement && page) {
+      var pageIndex = navElement.pages.indexOf(page);
+      if (!data) {
+        data = {animation: window.fn.onsenSettings.globalAnimation};
+      }
+      if (data && !data.animation) {
+        data.animation = window.fn.onsenSettings.globalAnimation;
+      }
+      if(page.initFunction){
+        page.data = data.data;
+        page.data.receiverPageId = id.split('.')[0];
+        page.initFunction();
+      }
+	  navElement.bringPageTop(pageIndex, data)
+      .then(function(){
+        if (callback) {
+          callback();
+        }
+        if (page.fixFirstTab) {
+          page.fixFirstTab();
+        }
+        window.fn.fixScroll();
+      });
+      window.fn.pageTrack.push(page.getAttribute('id'));
+      
+    } else {
+      console.error('Can\'t find navigator or page element');
+    }
+  };
+  window.fn.popPage = function (data, callback) {
+  	var hardcodedNavigatorId = 'myNavigator';
+	  var navElement = document.getElementById(hardcodedNavigatorId);
+    window.fn.pageTrack.pop();
+	  var page = document.getElementById(window.fn.pageTrack[window.fn.pageTrack.length - 1]);
+    if (navElement) {
+      var pageIndex = navElement.pages.indexOf(page);
+      if (!data) {
+        data = {animation: window.fn.onsenSettings.globalAnimation};
+      }
+      if (data && !data.animation) {
+        data.animation = window.fn.onsenSettings.globalAnimation;
+      }
+      if (ons.platform.isIOS() && (window.fn.onsenSettings.globalAnimation == 'none' || window.fn.onsenSettings.globalAnimation == 'default' || window.fn.onsenSettings.globalAnimation == 'slide')) {
+        data.animation = 'ios-slide-back';
+      }
+	  navElement.bringPageTop(pageIndex, data)
+      .then(function(){
+        if (callback) {
+          callback();
+        }
+        if (page.fixFirstTab) {
+          page.fixFirstTab();
+        }
+        window.fn.fixScroll();
+      });
+    } else {
+      console.error('Can\'t find navigator or page element');
+    }
+  };
+  window.fn.setLoader = function(isEnabled) {
+    var loaderElementId = 'onsLoadrElmntGlobl';
+    var loaderElement = document.getElementById(loaderElementId);
+    var functionToRun;
+    if (isEnabled) {
+      functionToRun = function() {loaderElement.style.display = 'block'; };
+    } else {
+      functionToRun = function() {loaderElement.style.display = 'none'; };
+    }
+    setTimeout(functionToRun, 0);
+  };
+  
+</script>
+
+<script type="text/javascript">Lib().db_instance().initialize_data("1537559351989x327525424771010900", {"_id":"1537559351989x327525424771010900","Created By":"1348695171700984260__LOOKUP__1537559351989x327525424771010900","Created Date":1537559352033,"Modified Date":1537559352039,"_type":"user","_version":14520}, "user", 14520);</script>
+</head>
+<body><script type="text/javascript">
+if (window.appquery == null) {
+    css = document.createElement('style');
+css.type='text/css';
+css.appendChild(document.createTextNode(".warning-message-failure {padding: 30px; line-height: 1.5; white-space: pre; z-index: 1000000; position: fixed; width: 100%; height: 100%; background: white;}"));
+document.getElementsByTagName("head")[0].appendChild(css);
+var newDiv = document.createElement("div");
+newDiv.className = "warning-message-failure";
+newDiv.innerHTML = "Your browser was unable to load some necessary resources, contact your IT network administrator and ask him or her to allow access to <br><br>     dhtiece9044ep.cloudfront.net <br>     dd7tel2830j4w.cloudfront.net/ <br>     d1muf25xaso8hp.cloudfront.net";
+document.body.appendChild(newDiv);
+    httpRequest = new XMLHttpRequest();
+httpRequest.open('POST', '/user/m', true);
+httpRequest.setRequestHeader('Content-Type', 'application/json');
+httpRequest.send(JSON.stringify({measures: {page_load_error: 1, url: document.location.href, errors: window.load_error_log}}));
+};
+</script><script type="text/javascript">if (window.appquery && window.app == null) {css = document.createElement('style');
+css.type='text/css';
+css.appendChild(document.createTextNode(".warning-message-failure {padding: 30px; line-height: 1.5; white-space: pre; z-index: 1000000; position: fixed; width: 100%; height: 100%; background: white;}"));
+document.getElementsByTagName("head")[0].appendChild(css);
+var newDiv = document.createElement("div");
+newDiv.className = "warning-message-failure";
+newDiv.innerHTML = "Your browser was unable to load the application data. We've been notified of the issue. Please try again in a few moments and make sure not to use ad-blockers.";
+document.body.appendChild(newDiv);};</script>
+<div style="display: none;">75849jkl432ggfdfdjsakl</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+/**/
+
+.page__background {
+  position: relative !important;
+}
+
+#myNavigator {
+  z-index: 1000001 !important;
+}
+
+#control.html {
+  display: none;
+}
