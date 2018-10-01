@@ -14,9 +14,9 @@ function initialize() {
 			      readFile(fileEntry, function(result) {
 			        oldIndex = result;
 			        getFileFromServer(appURL, function(newIndex) {
-			        	alert("downloaded new index file")
+			        	alert("Checking for updates: new index downloaded")
 			        	if (!checkForUpdatesFromFiles(oldIndex, newIndex)) {
-			        		alert("yes updates")
+			        		alert("Updates Available")
 			        		downloadAllAssets(newIndex, function(jsDownloaded, cssDownloaded) {
 			        			alert(jsDownloaded.length + " js files downloaded\n " + cssDownloaded.length + " css files downloaded");
 			        			saveInRestDb(newIndex, "new index (before renameAssetsWithHashesOnIndex)")
@@ -26,7 +26,7 @@ function initialize() {
 			        		});
 			        	} else {
 			        		if (window.location.href.indexOf(LOCALPROJDIR + "index.html") != -1) {
-			        			alert("NO UPDATES!!");	
+			        			alert("Everything is up to date");	
 			        		} else {
 			        			restartCordovaApp();
 			        		}
@@ -36,7 +36,6 @@ function initialize() {
 			        
 			      })
 			    }, function(err) {
-			    	alert(err.code)
 			    	copyAppToLocal()
 			    });
     		}, function(err) {
@@ -60,7 +59,7 @@ function copyAppToLocal() {
 }
 
 function restartCordovaApp() {
-	alert("about to restart cordova")
+	alert("About to restart the app.")
 	window.open(cordova.file.dataDirectory + LOCALPROJDIR + "index.html");
 
 }
@@ -161,7 +160,6 @@ function removeSubstring(str, start, end) {
 
 function getScriptTag(source, url) {
 	var tag = '<script type="text/javascript" data-js-url="' + url + '" src="' + source + '"></script>';
-	// alert(tag);
 	return tag;
 }
 
@@ -238,7 +236,6 @@ function downloadFilesFromListOfURLs(list, destination, type, successCallback) {
 	} else {
 		list.forEach(function(url) {
 			if (url.indexOf("http") == 0) {
-				alert("about to download:\n" + url)
 				var hashedFileName = type + hashString(url) + "." + type;
 				var file = downloadFileFromURL(url, destination + "/" + hashedFileName, function(newFile) {
 					filesToDownload += 1;
@@ -252,14 +249,12 @@ function downloadFilesFromListOfURLs(list, destination, type, successCallback) {
 					}
 				}, function(error) {
 					filesNotDownloaded += 1;
-					alert("error downloading \n" + url)
 					if (list.length == filesToDownload + filesToOmit + filesNotDownloaded) {
 						successCallback(filesDownloaded);
 					}
 				});
 			} else {
 				filesToOmit += 1;
-				alert("ommiting file \n" + url)
 				if (list.length == filesToDownload + filesToOmit + filesNotDownloaded) {
 					successCallback(filesDownloaded);
 				}
@@ -288,7 +283,6 @@ function downloadFileFromURL(webUrl, localUrl, successCallback, errorCallback) {
 	    cordova.file.dataDirectory + localUrl,
 	    function(entry) {
 	        console.log("download complete: " + entry.toURL());
-	        alert("Download complete")
           entry.file(
             function(file){
               var fileReader = new FileReader();
@@ -383,10 +377,8 @@ function saveInRestDb(html, url) {
 	  "data": JSON.stringify(jsondata)
 	}
 
-	alert("about to save " + url + " in restDB")
-
 	$.ajax(settings).done(function (response) {
-		alert(response);
+		// alert(response);
 	});
 }
 
@@ -397,10 +389,6 @@ function checkForUpdatesFromFiles(oldIndexStr, newIndexStr) {
 	var newJsFiles = getFileNames(newIndexStr, 'js');
 	var newCssFiles = getFileNames(newIndexStr, 'css');
 
-
-	alert("JS Files to be downloaded: " + newJsFiles.toString());
-	alert("\n CSS Files to be downloaded: " + newCssFiles.toString());
-
 	var jsUpdates = checkForUpdatesFromLists(oldJsFiles, newJsFiles);
 	var cssUpdates = checkForUpdatesFromLists(oldCssFiles, newCssFiles);
 
@@ -410,8 +398,6 @@ function checkForUpdatesFromFiles(oldIndexStr, newIndexStr) {
 function downloadAllAssets(indexStr, successCallback) {
 	var jsFiles = getFileNames(indexStr, 'js');
 	var cssFiles = getFileNames(indexStr, 'css');
-	alert("JS Files to be downloaded: " + jsFiles.toString());
-	alert("\n CSS Files to be downloaded: " + cssFiles.toString());
 	downloadAssets(jsFiles, cssFiles, successCallback)
 }
 
